@@ -1,0 +1,37 @@
+FROM ghcr.io/graalvm/graalvm-ce:ol8-java17-22.3.3 AS builder
+
+RUN useradd -m graalvm && usermod -aG root graalvm
+
+COPY --chown=graalvm:root mvnw /usr/src/app/mvnw
+COPY --chown=graalvm:root .mvn /usr/src/app/.mvn
+COPY --chown=graalvm:root pom.xml /usr/src/app/
+RUN chmod +x /usr/src/app/mvnw
+RUN chmod +x /usr/src/app/.mvn
+
+# Update package lists
+RUN microdnf update -y && \
+microdnf install -y zip unzip && \
+microdnf clean all
+
+RUN curl -s "https://get.sdkman.io" | bash; \
+    source "$HOME/.sdkman/bin/sdkman-init.sh"; \
+    gu install native-image;
+
+USER graalvm
+WORKDIR /usr/src/app
+
+# Copy pom.xml and download dependencies
+#RUN ./mvnw -Dhttps.proxyHost=192.168.45.194 -Dhttps.proxyPort=8080 dependency:go-offline
+RUN ./mvnw dependency:go-offline
+COPY src /usr/src/app/src
+#RUN ./mvnw -Dhttps.proxyHost=192.168.45.194 -Dhttps.proxyPort=8080 clean -DskipTests -Pnative native:compile
+RUN ./mvnw clean -DskipTests -Pnative native:compile
+
+# The deployment Image
+FROM docker.io/oraclelinux:8-slim
+WORKDIR /app
+# Copy the native binary from the build stage
+COPY --from=builder /usr/src/app/target/native-app /app/native-app
+EXPOSE 8080
+# Run the application
+CMD ["/app/native-app"]
