@@ -23,7 +23,7 @@
     "allDeclaredClasses":true,
     "queryAllDeclaredMethods":true,
     "queryAllDeclaredConstructors":true,
-    "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setBeanFactory","parameterTypes":["org.springframework.beans.factory.BeanFactory"] }, {"name":"taskExecutor","parameterTypes":[] }]
+    "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setBeanFactory","parameterTypes":["org.springframework.beans.factory.BeanFactory"] }]
   },
   {
     "name":"id.co.bni.parameter.ParameterServiceNativeApplication$$SpringCGLIB$$0",
@@ -31,15 +31,7 @@
     "queryAllDeclaredMethods":true,
     "queryAllDeclaredConstructors":true,
     "fields":[{"name":"CGLIB$FACTORY_DATA"}],
-    "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"CGLIB$SET_STATIC_CALLBACKS","parameterTypes":["org.springframework.cglib.proxy.Callback[]"] }, {"name":"CGLIB$SET_THREAD_CALLBACKS","parameterTypes":["org.springframework.cglib.proxy.Callback[]"] }, {"name":"taskExecutor","parameterTypes":[] }]
-  },
-  {
-    "name":"id.co.bni.parameter.ParameterServiceNativeApplication$$SpringCGLIB$$FastClass$$0",
-    "methods":[{"name":"<init>","parameterTypes":["java.lang.Class"] }]
-  },
-  {
-    "name":"id.co.bni.parameter.ParameterServiceNativeApplication$$SpringCGLIB$$FastClass$$1",
-    "methods":[{"name":"<init>","parameterTypes":["java.lang.Class"] }]
+    "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"CGLIB$SET_STATIC_CALLBACKS","parameterTypes":["org.springframework.cglib.proxy.Callback[]"] }, {"name":"CGLIB$SET_THREAD_CALLBACKS","parameterTypes":["org.springframework.cglib.proxy.Callback[]"] }]
   },
   {
     "name":"id.co.bni.parameter.cache.ParameterLoader",
@@ -59,6 +51,29 @@
     "queryAllDeclaredMethods":true,
     "queryAllDeclaredConstructors":true,
     "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"interceptorForRepository","parameterTypes":["org.aspectj.lang.ProceedingJoinPoint"] }]
+  },
+  {
+    "name":"id.co.bni.parameter.config.AsyncConfig",
+    "allDeclaredFields":true,
+    "queryAllDeclaredMethods":true,
+    "queryAllDeclaredConstructors":true,
+    "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setBeanFactory","parameterTypes":["org.springframework.beans.factory.BeanFactory"] }, {"name":"taskExecutor","parameterTypes":[] }]
+  },
+  {
+    "name":"id.co.bni.parameter.config.AsyncConfig$$SpringCGLIB$$0",
+    "allDeclaredFields":true,
+    "queryAllDeclaredMethods":true,
+    "queryAllDeclaredConstructors":true,
+    "fields":[{"name":"CGLIB$FACTORY_DATA"}],
+    "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"CGLIB$SET_STATIC_CALLBACKS","parameterTypes":["org.springframework.cglib.proxy.Callback[]"] }, {"name":"CGLIB$SET_THREAD_CALLBACKS","parameterTypes":["org.springframework.cglib.proxy.Callback[]"] }, {"name":"taskExecutor","parameterTypes":[] }]
+  },
+  {
+    "name":"id.co.bni.parameter.config.AsyncConfig$$SpringCGLIB$$FastClass$$0",
+    "methods":[{"name":"<init>","parameterTypes":["java.lang.Class"] }]
+  },
+  {
+    "name":"id.co.bni.parameter.config.AsyncConfig$$SpringCGLIB$$FastClass$$1",
+    "methods":[{"name":"<init>","parameterTypes":["java.lang.Class"] }]
   },
   {
     "name":"id.co.bni.parameter.config.RedisConfig",
